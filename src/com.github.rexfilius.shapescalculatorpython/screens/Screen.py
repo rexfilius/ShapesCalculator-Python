@@ -38,14 +38,17 @@ def check_second_menu():
         second_menu()
 
 
-# TODO: Handle exception here should the user give a wrong input format
 def third_menu():
     print("\nPress 1 to go back to MENU\nPress 2 to END")
-    thirdMenuInput = int(input())
-    if thirdMenuInput == 1:
-        print('')  # TODO: replace with run_calculator function from Calculator.py
-    elif thirdMenuInput == 2:
-        print('End of program\n')
-    else:
-        print('Invalid input')
+    try:
+        thirdMenuInput = int(input())
+        if thirdMenuInput == 1:
+            print('')  # TODO: replace with run_calculator function from Calculator.py
+        elif thirdMenuInput == 2:
+            print('End of program\n')
+        else:
+            print('Invalid input')
+            third_menu()
+    except (ValueError, TypeError):
+        print("\nInvalid Input\n")
         third_menu()
