@@ -1,4 +1,4 @@
-import Shape
+from src.shapescalculatorpython.models.shape import Shape
 
 
 class Rectangle(Shape):

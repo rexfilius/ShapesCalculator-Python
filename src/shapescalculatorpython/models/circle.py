@@ -1,6 +1,6 @@
 from math import pi
 
-import Shape
+from src.shapescalculatorpython.models.shape import Shape
 
 
 class Circle(Shape):

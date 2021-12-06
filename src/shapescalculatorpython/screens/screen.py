@@ -1,3 +1,6 @@
+# from Calculator import run_calculator
+import calculator
+
 INVALID_DATA = "\nYOU ENTERED INVALID DATA\n"
 INVALID_CASING = "\nCHECK YOUR CASING/WORDS. TYPE CORRECTLY\n"
 
@@ -7,8 +10,8 @@ parameter = ""
 
 def first_menu() -> str:
     firstMessage = ('This Application Calculates The Area And Perimeter Of 2-Dimensional Shapes'
-                    'List of Shapes: [Triangle, Circle, Square, Rectangle, Parallelogram, Trapezium]'
-                    'Select a Shape: [Type it in]')
+                    '\nList of Shapes: [Triangle, Circle, Square, Rectangle, Parallelogram, Trapezium]'
+                    '\nSelect a Shape: [Type it in]')
     print(firstMessage)
     global select
     select = str(input())
@@ -43,7 +46,7 @@ def third_menu():
     try:
         thirdMenuInput = int(input())
         if thirdMenuInput == 1:
-            print('')  # TODO: replace with run_calculator function from Calculator.py
+            calculator.run_calculator()
         elif thirdMenuInput == 2:
             print('End of program\n')
         else:
