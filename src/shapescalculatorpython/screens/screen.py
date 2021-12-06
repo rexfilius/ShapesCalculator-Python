@@ -20,9 +20,9 @@ def first_menu() -> str:
 
 
 def check_first_menu():
-    while (select != 'Circle' or select != 'Triangle' or select != 'Square'
-           or select != 'Rectangle' or select != 'Parallelogram'
-           or select != 'Trapezium'):
+    while (not(select == 'Circle' or select == 'Triangle' or select == 'Square'
+           or select == 'Rectangle' or select == 'Parallelogram'
+           or select == 'Trapezium')):
         print(INVALID_CASING)
         first_menu()
 
@@ -36,7 +36,7 @@ def second_menu() -> str:
 
 
 def check_second_menu():
-    while parameter != 'Area' or parameter != 'Perimeter':
+    while not(parameter == 'Area' or parameter == 'Perimeter'):
         print(INVALID_CASING)
         second_menu()
 
