@@ -1,43 +1,61 @@
 # from Calculator import run_calculator
 import calculator
 
-INVALID_DATA = "\nYOU ENTERED INVALID DATA\n"
-INVALID_CASING = "\nCHECK YOUR CASING/WORDS. TYPE CORRECTLY\n"
+shape_menu_selection: int
+calculation_menu_selection: int
 
-select = ""
-parameter = ""
-
-
-def first_menu() -> str:
-    firstMessage = ('This Application Calculates The Area And Perimeter Of 2-Dimensional Shapes'
-                    '\nList of Shapes: [Triangle, Circle, Square, Rectangle, Parallelogram, Trapezium]'
-                    '\nSelect a Shape: [Type it in]')
-    print(firstMessage)
-    global select
-    select = str(input())
-    check_first_menu()
-    return select
+calculation_menu = {1: 'Area', 2: 'Perimeter'}
+shape_menu = {1: 'Triangle',
+              2: 'Circle',
+              3: 'Square',
+              4: 'Rectangle',
+              5: 'Parallelogram',
+              6: 'Trapezium'}
 
 
-def check_first_menu():
-    while (not(select == 'Circle' or select == 'Triangle' or select == 'Square'
-           or select == 'Rectangle' or select == 'Parallelogram'
-           or select == 'Trapezium')):
-        print(INVALID_CASING)
+def first_menu() -> int:
+    firstMessage = """
+        This Application Calculates The Area And Perimeter Of 2-Dimensional Shapes
+        Type in a NUMBER corresponding to the SHAPE
+        """
+    print(firstMessage.strip())
+    for key, value in shape_menu.items():
+        print(f"{key} - {value}")
+
+    global shape_menu_selection
+    try:
+        shape_menu_selection = int(input())
+        check_first_menu()
+        return shape_menu_selection
+    except ValueError:
+        print("\nInvalid Input\n")
         first_menu()
 
 
-def second_menu() -> str:
-    print("What do you want to calculate: Area? or Perimeter? [Type it in]")
-    global parameter
-    parameter = str(input())
-    check_second_menu()
-    return parameter
+def check_first_menu():
+    while shape_menu_selection not in shape_menu:
+        print('\nPlease type in the NUMBER corresponding with the SHAPE\n')
+        first_menu()
+
+
+def second_menu() -> int:
+    print("What do you want to calculate:")
+    for key, value in calculation_menu.items():
+        print(f"{key} - {value}")
+
+    global calculation_menu_selection
+    try:
+        calculation_menu_selection = int(input())
+        check_second_menu()
+        return calculation_menu_selection
+    except ValueError:
+        print("\nInvalid Input\n")
+        second_menu()
 
 
 def check_second_menu():
-    while not(parameter == 'Area' or parameter == 'Perimeter'):
-        print(INVALID_CASING)
+    while calculation_menu_selection not in calculation_menu:
+        print('Please type in the corresponding NUMBER')
         second_menu()
 
 

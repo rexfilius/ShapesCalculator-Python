@@ -35,7 +35,7 @@ class Trapezium(Shape):
                 self.height = arg3
                 print(f"Height: {arg3}")
 
-                print(f"Area of Trapezium: {self.area()}")
+                print(f"Area of Trapezium: {self.area():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
@@ -63,7 +63,7 @@ class Trapezium(Shape):
                 self.side_length_2 = arg3
                 print(f"SideLength-2: {arg4}")
 
-                print(f"Perimeter of Trapezium: {self.perimeter()}")
+                print(f"Perimeter of Trapezium: {self.perimeter():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")

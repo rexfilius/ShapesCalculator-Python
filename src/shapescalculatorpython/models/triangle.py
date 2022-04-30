@@ -28,7 +28,7 @@ class Triangle(Shape):
                 self.height = arg2
                 print(f"Height: {arg2}")
 
-                print(f"Area of Triangle: {self.area()}")
+                print(f"Area of Triangle: {self.area():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
@@ -51,7 +51,7 @@ class Triangle(Shape):
                 self.base_length = arg3
                 print(f"BaseLength: {arg3}")
 
-                print(f"Perimeter of Triangle: {self.perimeter()}")
+                print(f"Perimeter of Triangle: {self.perimeter():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")

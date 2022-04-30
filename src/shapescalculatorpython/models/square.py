@@ -16,7 +16,7 @@ class Square(Shape):
         while True:
             try:
                 self._get_side_length()
-                print(f"Area of Square: {self.area()}")
+                print(f"Area of Square: {self.area():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
@@ -25,7 +25,7 @@ class Square(Shape):
         while True:
             try:
                 self._get_side_length()
-                print(f"Perimeter of Square: {self.perimeter()}")
+                print(f"Perimeter of Square: {self.perimeter():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")

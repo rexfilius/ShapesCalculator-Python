@@ -17,7 +17,7 @@ class Rectangle(Shape):
         while True:
             try:
                 self._get_length_and_breadth()
-                print(f"Area of Rectangle: {self.area()}")
+                print(f"Area of Rectangle: {self.area():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
@@ -26,7 +26,7 @@ class Rectangle(Shape):
         while True:
             try:
                 self._get_length_and_breadth()
-                print(f"Perimeter of Rectangle: {self.perimeter()}")
+                print(f"Perimeter of Rectangle: {self.perimeter():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")

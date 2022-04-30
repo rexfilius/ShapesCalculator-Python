@@ -18,7 +18,7 @@ class Circle(Shape):
         while True:
             try:
                 self._get_radius_of_circle()
-                print(f"Area of circle: {self.area()}")
+                print(f"Area of circle: {self.area():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
@@ -27,7 +27,7 @@ class Circle(Shape):
         while True:
             try:
                 self._get_radius_of_circle()
-                print(f"Perimeter of circle: {self.perimeter()}")
+                print(f"Perimeter of circle: {self.perimeter():.3f}")
                 break
             except(ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")

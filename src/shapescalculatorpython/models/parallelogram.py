@@ -27,7 +27,7 @@ class Parallelogram(Shape):
                 self.height = arg2
                 print(f"Height: {arg2}")
 
-                print(f"Area of parallelogram: {self.area()}")
+                print(f"Area of parallelogram: {self.area():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
@@ -45,7 +45,7 @@ class Parallelogram(Shape):
                 self.side_length = arg2
                 print(f"SideLength: {arg2}")
 
-                print(f"Perimeter of Parallelogram: {self.perimeter()}")
+                print(f"Perimeter of Parallelogram: {self.perimeter():.3f}")
                 break
             except (ValueError, TypeError):
                 print("\nYOU ENTERED INVALID DATA\n")
