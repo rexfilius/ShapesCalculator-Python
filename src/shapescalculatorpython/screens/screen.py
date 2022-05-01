@@ -1,75 +1,76 @@
-# from Calculator import run_calculator
 import calculator
-
-shape_menu_selection: int
-calculation_menu_selection: int
-
-calculation_menu = {1: 'Area', 2: 'Perimeter'}
-shape_menu = {1: 'Triangle',
-              2: 'Circle',
-              3: 'Square',
-              4: 'Rectangle',
-              5: 'Parallelogram',
-              6: 'Trapezium'}
+from src.shapescalculatorpython.models.shape import Shapes
 
 
-def first_menu() -> int:
+selectedShape: int
+selectedCalculation: int
+
+menuForCalculation = {1: 'Area', 2: 'Perimeter'}
+menuForShape = {1: Shapes.Triangle,
+                2: Shapes.Circle,
+                3: Shapes.Square,
+                4: Shapes.Rectangle,
+                5: Shapes.Parallelogram,
+                6: Shapes.Trapezium}
+
+
+def menuToSelectShape() -> Shapes:
     firstMessage = """
-        This Application Calculates The Area And Perimeter Of 2-Dimensional Shapes
-        Type in a NUMBER corresponding to the SHAPE
-        """
+            This Application Calculates The Area And Perimeter Of 2-Dimensional Shapes
+            Type in a NUMBER corresponding to the SHAPE
+            """
     print(firstMessage.strip())
-    for key, value in shape_menu.items():
-        print(f"{key} - {value}")
+    for key, shape in menuForShape.items():
+        print(f"{key} - {shape.name}")
 
-    global shape_menu_selection
+    global selectedShape
     try:
-        shape_menu_selection = int(input())
-        check_first_menu()
-        return shape_menu_selection
+        selectedShape = int(input())
+        checkMenuToSelectShape()
+        return menuForShape[selectedShape]
     except ValueError:
         print("\nInvalid Input\n")
-        first_menu()
+        menuToSelectShape()
 
 
-def check_first_menu():
-    while shape_menu_selection not in shape_menu:
+def checkMenuToSelectShape():
+    while selectedShape not in menuForShape:
         print('\nPlease type in the NUMBER corresponding with the SHAPE\n')
-        first_menu()
+        menuToSelectShape()
 
 
-def second_menu() -> int:
+def menuToSelectMeasurement() -> int:
     print("What do you want to calculate:")
-    for key, value in calculation_menu.items():
+    for key, value in menuForCalculation.items():
         print(f"{key} - {value}")
 
-    global calculation_menu_selection
+    global selectedCalculation
     try:
-        calculation_menu_selection = int(input())
-        check_second_menu()
-        return calculation_menu_selection
+        selectedCalculation = int(input())
+        checkMenuToSelectMeasurement()
+        return selectedCalculation
     except ValueError:
         print("\nInvalid Input\n")
-        second_menu()
+        menuToSelectMeasurement()
 
 
-def check_second_menu():
-    while calculation_menu_selection not in calculation_menu:
+def checkMenuToSelectMeasurement():
+    while selectedCalculation not in menuForCalculation:
         print('Please type in the corresponding NUMBER')
-        second_menu()
+        menuToSelectMeasurement()
 
 
-def third_menu():
+def menuToContinueOrEnd():
     print("\nPress 1 to go back to MENU\nPress 2 to END")
     try:
         thirdMenuInput = int(input())
         if thirdMenuInput == 1:
-            calculator.run_calculator()
+            calculator.runCalculator()
         elif thirdMenuInput == 2:
             print('End of program\n')
         else:
             print('Invalid input')
-            third_menu()
+            menuToContinueOrEnd()
     except (ValueError, TypeError):
         print("\nInvalid Input\n")
-        third_menu()
+        menuToContinueOrEnd()

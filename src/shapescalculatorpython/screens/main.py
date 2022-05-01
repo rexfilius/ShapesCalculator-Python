@@ -2,7 +2,7 @@ import calculator
 
 
 def main():
-    calculator.run_calculator()
+    calculator.runCalculator()
     print("Calculator has gone off")
 
 
